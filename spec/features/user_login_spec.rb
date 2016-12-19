@@ -1,13 +1,13 @@
 require "rails_helper"
 
-RSpec.describe "User Sign Up" do
+RSpec.describe "User Login" do
   describe "when user visit the root page" do
-    it "expects to see the option to sign up" do
+    it "expects to see the option to login" do
       # As an unauthenticated user
       # When I visit the root of the application "/"
       visit '/'
       # I should be redirected to a page which prompts me to "Log In or Sign Up".
-      expect(page).to have_content('Sign Up')
+      expect(page).to have_content('Log in')
     end
   end
 
