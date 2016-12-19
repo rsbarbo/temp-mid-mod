@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "User Sign Up" do
   describe "when user visit the root page" do
-    it "gets re-directed to the sign up page" do
+    it "expects to see the option to sign up" do
       # As an unauthenticated user
       # When I visit the root of the application "/"
       visit "/"
