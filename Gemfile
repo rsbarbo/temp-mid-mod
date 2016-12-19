@@ -13,7 +13,7 @@ gem 'rails_12factor'
 gem 'responders'
 gem 'awesome_print'
 gem 'bcrypt', '~> 3.1.7'
-gem 'materialize-sass'
+gem 'bootstrap-sass'
 gem 'figaro'
 gem 'faraday'
 

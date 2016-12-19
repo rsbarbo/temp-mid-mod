@@ -10,5 +10,8 @@ Rails.application.routes.draw do
     end
   end
 
-  get '/user_auth', to: 'users#index'
+  get '/signup', to: 'users#new'
+  post '/users',  to:'user#create'
+
+
 end

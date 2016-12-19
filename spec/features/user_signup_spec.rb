@@ -6,8 +6,8 @@ RSpec.describe "User Sign Up" do
       # As an unauthenticated user
       # When I visit the root of the application "/"
       visit "/"
+      expect(page).to have_content('Sign Up')
       # I should be redirected to a page which prompts me to "Log In or Sign Up".
-      expect(current_path).to eq("user_auth")
     end
   end
 end
