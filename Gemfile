@@ -17,10 +17,13 @@ gem 'materialize-sass'
 gem 'figaro'
 gem 'faraday'
 
+group :development do
+  gem 'web-console'
+end
+
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
-  gem 'web-console', '~> 2.0'
   gem 'capybara'
   gem 'launchy'
   gem 'pry-rails'

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root to: "links#index"
 
   resources :links, only: [:index]
@@ -8,4 +9,6 @@ Rails.application.routes.draw do
       resources :links, only: [:create]
     end
   end
+
+  get '/user_auth', to: 'users#index'
 end
