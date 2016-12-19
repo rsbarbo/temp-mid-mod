@@ -21,3 +21,10 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = false
   config.infer_spec_type_from_file_location!
 end
+
+def user_login(user)
+  visit login_path
+  fill_in "email", with: user.email
+  fill_in "password", with: user.password
+  click_button("Log In")
+end
