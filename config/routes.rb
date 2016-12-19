@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   root to: "links#index"
 
   get '/signup', to: 'users#new'
-  post '/users',  to:'user#create'
+  post '/users',  to:'users#create'
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
-  get '/logout' => 'sessions#destroy'
+  delete '/logout' => 'sessions#destroy'
 
   resources :links, only: [:index]
 

@@ -15,6 +15,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session.clear
-    redirect_to login_path
+    redirect_to signup_path
   end
 end
