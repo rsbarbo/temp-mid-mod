@@ -2,6 +2,12 @@
 <div class="links">
   <%= link.title %></br>
   <%= link_to "Link", link.url, :target => "_blank" %>
+  <% if link.read == true %>
   <%= button_to "Edit", edit_link_path(link), method: :get %>
+  <%= button_to "Mark as Unread", update_status_path(link, special_action: link.read), method: :patch %>
+  <% else  %>
+  <%= button_to "Edit", edit_link_path(link), method: :get %>
+  <%= button_to "Mark as Read", update_status_path(link, special_action: link.read), method: :patch%>
+  <% end %>
 </div></br>
 <% end %>

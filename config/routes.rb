@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   get '/visitor_login', to: 'sessions#index'
 
+  patch  '/update_status/:id', to: 'links#update', as: 'update_status'
+
   resources :links, only: [:index, :create, :edit, :update]
 
   namespace :api do
