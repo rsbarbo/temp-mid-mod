@@ -28,3 +28,9 @@ def user_login(user)
   fill_in "password", with: user.password
   click_button("Log In")
 end
+
+def create_link(link)
+  fill_in "link_title", with: link[:link_title]
+  fill_in "link_url", with: link[:link_url]
+  click_button("Submit")
+end

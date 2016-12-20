@@ -11,8 +11,22 @@ class LinksController < ApplicationController
     if @link.save
       redirect_to root_path
     else
-      flash[:warning] = "Not valid URL"
+      flash[:error] = "Not a valid URL"
       redirect_to root_path
+    end
+  end
+
+  def edit
+    @link = Link.find(params[:id])
+  end
+
+  def update
+    @link = Link.find(params[:id])
+    if @link.update(link_params)
+      redirect_to root_path
+    else
+      flash[:error] = "Not a valid URL"
+      redirect_to edit_link_path(@link)
     end
   end
 

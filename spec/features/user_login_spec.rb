@@ -27,7 +27,7 @@ RSpec.describe "User Login" do
     end
   end
 
-  it "creates the saves the user" do
+  it "user can login and be directed to the correct page" do
     visit login_path
 
     user = create(:user)
@@ -38,5 +38,18 @@ RSpec.describe "User Login" do
     click_button("Log In")
 
     expect(current_path).to eq("/")
+  end
+
+  it "user cannot login when password is wrong" do
+    visit login_path
+
+    user = create(:user)
+
+    fill_in "email", with: user.email
+    fill_in "password", with: "wrongpassword"
+
+    click_button("Log In")
+
+    expect(current_path).to eq("/login")
   end
 end

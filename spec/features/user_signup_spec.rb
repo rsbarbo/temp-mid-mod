@@ -45,4 +45,21 @@ RSpec.describe "User Sign Up" do
 
     expect(current_path).to eq("/")
   end
+
+  it "cannot save the user if not all the params are given" do
+    visit signup_path
+
+    user = {name: "Raphael",
+            email: "com",
+            password: "password"}
+
+    fill_in "user_name", with: user[:name]
+    fill_in "user_email", with: user[:email]
+    fill_in "user_password", with: user[:password]
+    fill_in "user_password_confirmation", with: user[:password]
+
+    click_button("Create Account")
+
+    expect(current_path).to eq(signup_path)
+  end
 end
