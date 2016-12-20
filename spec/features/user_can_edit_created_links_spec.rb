@@ -26,6 +26,7 @@ RSpec.describe "Create Link" do
 
       expect(current_path).to eq("/")
     end
+    
     it "expects not to be able to submit a new link when link is not valid" do
 
       user = create(:user)
